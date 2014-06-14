@@ -1,0 +1,172 @@
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville|Vollkorn|Crimson+Text:400,600,600italic,700,400italic|Raleway:400,100,200,300,500);
+
+
+/* ======================================================================
+
+PALETTE=
+
+========================================================================= */
+
+// Dating App Color Scheme
+@od-orange: #f8ae59;
+@od-o-hover: #f3942e;
+@od-white: #fffcf0;
+@od-lpurple: #a794ac;
+@od-p-trans: rgba(169, 151, 175, 0.4);
+@od-brown: #795446;
+@od-gray: #474747;
+@od-lgray: #a09f9f;
+@od-dpurple: #74022d;
+
+/* ======================================================================
+
+FONTS=
+
+========================================================================= */
+
+@od-serif: 'Libre Baskerville', serif;
+@od-crimson: 'Crimson Text', serif;
+@od-volkorn: 'Vollkorn', serif;
+@od-sans: 'Raleway', sans-serif;
+
+/* ======================================================================
+
+SOME RESETS=
+
+========================================================================= */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background-color: none !important;
+}
+
+html {
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  overflow-x: hidden; // prevents sideways scrolling.
+
+}
+
+/* ======================================================================
+
+HOME=
+
+========================================================================= */
+
+.container__home {
+  height: 100%;
+  min-height: 100%;
+  > .top-section {
+    background-image: url(/img/coffee1.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+    > .top-section-text {
+      align-self: center;
+      background: fadeOut(#fffcf0, 33deg);
+      padding: @lh * 2;
+      text-align: center;
+      > .teaser-text--big {
+        font-family: @od-serif;
+        font-size: @fs * 2.8;
+        margin-bottom: @lh * 3;
+      }
+      > .teaser-text--tagline {
+        margin-bottom: @lh;
+        font-size: @fs * 1.2;
+      }
+      > a > .icon-arrow-down{
+        width: 32px;
+        height: 32px;
+        background-image: url(/img/down-arrow.png);
+        margin: 0 auto;
+      }
+    }
+  }
+  > .features {
+    align-items: center;
+    background: #f8ae59;
+    display: flex;
+    min-height: 50vh;
+    padding: @lh;
+    width: 100%;
+    > .img-wrapper {
+      box-shadow: 2px 2px 2px @od-o-hover;
+      background-color: @od-white;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      > img {
+        align-self: center;
+        max-width: 91%;
+      }
+    }
+    > .features-list {
+      display: table;
+      padding: @lh * 4;
+      vertical-align: middle;
+      width: 50%;
+      > h2 {
+        margin-bottom: @lh;
+        color: @od-white;
+      }
+      > ul {
+        vertical-align: middle;
+        > li {
+          margin-bottom: @lh / 2;
+        }
+      }
+    }
+  }
+  > .sign-up {
+    align-items: center;
+    background:
+      linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+        ),
+        url(/img/iced-coffee.jpg);
+    background-size: 100%;
+    background-repeat: none;
+    display: flex;
+    justify-content: center;
+    min-height: 60vh;
+    > .sign-up__inner {
+      > h2 {
+        display: block;
+        margin-bottom: @lh / 2;
+        color: @od-gray;
+      }
+      > form {
+        > input {
+          border: 1px solid #ccc;
+          display: block;
+          margin-bottom: @lh/3;
+          padding: @lh / 4;
+          min-width: 60%;
+        }
+        > .btn-primary {
+          height: @lh * 1.5;
+          padding-left: @lh / 2;
+          padding-right: @lh / 2;
+          background-color: @od-orange;
+          border: 0;
+          margin-bottom: 30px;
+          &:hover{
+            background-color: @od-o-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.account-form--inner > .form-control{
+  margin-bottom: 10px;
+}

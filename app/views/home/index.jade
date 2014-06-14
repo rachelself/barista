@@ -2,3 +2,63 @@ extends ../shared/template
 
 block content
   h1= title
+
+  .container__home
+
+    section#about.top-section
+
+      header.header
+        h1 Barista Home
+        nav.nav
+          ul
+            li: a(href='#about') About
+            li: a(href='#features') Features
+            li: a(href='#sign-up') Sign Up
+            li: a.sign-in(href='/users/profile') Sign In
+
+      .top-section-text
+        p.teaser-text--big Real people meeting in real life. Furreal.
+        p.teaser-text--tagline Get started
+        a(href='#features')
+           .icon-arrow-down
+
+    section#features.features
+      .img-wrapper
+        img(src='/img/couple2.jpg')
+      .features-list
+        h2 Features
+        ul
+          li certifiable humans
+          li don't share your contact information upfront
+          li safe space
+
+    section#sign-up.sign-up
+      .sign-up__inner
+        h2 Create Account
+        form(action='/users' method='post')
+          input.form-control(type='text', name='firstName', placeholder='First Name', autofocus=true)
+          input.form-control(type='text', name='lastName', placeholder='Last Name')
+          input.form-control(type='email', name='email', placeholder='Email')
+          input.form-control(type='password', name='password', placeholder='Password')
+          select.form-control(name='gender')
+            option Select Your Gender
+            option Male
+            option Female
+          input.form-control(type='text', name='location', placeholder='Zip Code')
+          select.form-control(name='lookingFor')
+            option Select What You're Looking For
+            option Male
+            option Female
+          input.form-control(type=number, name='age', placeholder='Age')
+          button.btn.btn-primary Get Started
+
+  section.loginForm
+    form#sign-in.account-form--outer(action='/users/login', method='post')
+      .account-form--inner
+        input.form-control(type='email', name='email', placeholder='Email', autofocus=true)
+        input.form-control(type='password', name='password', placeholder='Password')
+        button.btn.btn-primary Login
+        a.cancel(href='#') Cancel
+
+block scripts
+  script(src='/js/es6/compiled/landing.js')
